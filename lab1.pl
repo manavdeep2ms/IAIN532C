@@ -246,3 +246,7 @@ remedyOf(nil, nipah).
 remedyOf(aloe-vera, diabetes).
 remedyOf('support group', downs-syndrome).
 remedyOf(garlic, epilepsy).
+
+remedy(X):- symptomOf(X,Y), remedyOf(Z, Y),write(Y),nl, write(Z).
+doctor(X):- symptomOf(X,Y), specialist(Y, Z), lives(Z, A), write(Z), nl, write(A).
+symptoms(X):-symptomOf(Y, X), write(Y).
